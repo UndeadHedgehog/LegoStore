@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace LegoStoreApi;
 
-class Program
+class Launcher
 {
     static void Main(string[] args)
     {
