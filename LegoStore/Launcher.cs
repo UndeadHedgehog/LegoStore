@@ -23,7 +23,7 @@ class Launcher
          */
 
         var app = builder
-            .Build(); // application that includes of the configurations added to previous WebApplicationBuilder
+            .Build(); // application including configurations added to previous WebApplicationBuilder
 
         app.MapControllers(); // creates end-points for mine Controllers 
 
