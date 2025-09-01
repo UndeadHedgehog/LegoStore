@@ -1,2 +1,4 @@
 # Explanation of prefixes used for commits
-"docs:" <- used for changes in documentation / comments
+"docs:" <- changes in documentation / comments.
+"refactor:" <- process of restructuring existing computer code without changing its external behavior
+"remove:" <- something that is for some reason no longer needed
