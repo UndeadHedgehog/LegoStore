@@ -17,13 +17,14 @@ class Launcher
 
         builder.Services.AddControllers();
         /* From my understanding:
-         *  - registers definitions of each class that extends Controller / ControllerBase classes 
+         *  - registers definitions of each class that extends Controller / ControllerBase classes
          *  - By default, on every API request creates instance of specific controller class which dies after request is fully finished
          *  - provides services ( things like [HttpGet], [Route], json stuff, and other things commonly used.
          */
-        
-        var app = builder.Build(); // application that includes of the configurations added to previous WebApplicationBuilder
-        
+
+        var app = builder
+            .Build(); // application that includes of the configurations added to previous WebApplicationBuilder
+
         app.MapControllers(); // creates end-points for mine Controllers 
 
         app.Run(); // keeps app-thread running and listens for upcoming requests
