@@ -23,8 +23,6 @@ class Launcher
          */
         
         var app = builder.Build(); // application that includes of the configurations added to previous WebApplicationBuilder
-
-        app.UseHttpsRedirection();
         
         app.MapControllers(); // creates end-points for mine Controllers 
 
