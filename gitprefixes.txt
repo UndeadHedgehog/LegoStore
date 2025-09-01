@@ -1,0 +1,2 @@
+# Explanation of prefixes used for commits
+"docs:" <- used for changes in documentation / comments
