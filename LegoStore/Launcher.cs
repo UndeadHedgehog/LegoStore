@@ -25,7 +25,7 @@ class Launcher
         var app = builder
             .Build(); // application including configurations added to previous WebApplicationBuilder
 
-        app.MapControllers(); // creates end-points for mine Controllers 
+        app.MapControllers(); // creates end-points for my Controllers 
 
         app.Run(); // keeps app-thread running and listens for upcoming requests
     }
