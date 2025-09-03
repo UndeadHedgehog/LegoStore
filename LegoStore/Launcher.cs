@@ -22,9 +22,8 @@ class Launcher
          *  - provides services ( things like [HttpGet], [Route], json stuff, and other things commonly used.
          */
 
-        var app = builder
-            .Build(); // application including configurations added to previous WebApplicationBuilder
-
+        var app = builder.Build(); // application including configurations added to previous WebApplicationBuilder
+        
         app.MapControllers(); // creates end-points for my Controllers 
 
         app.Run(); // keeps app-thread running and listens for upcoming requests
