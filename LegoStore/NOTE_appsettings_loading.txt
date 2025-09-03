@@ -1,0 +1,34 @@
+﻿Based on "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-9.0"
+I did not read the whole article sadly, but currently I understand it as:
+    When I create WebApplicationBuilder it looks for:        
+        - command line arguments
+        - environment variables  ( non prefixed )
+        - secret.json
+        - launchSettings.json
+        - appsettings.{Environment}.json
+        - appsettings.json
+        
+    I guess that it loads data from each source ( files above ) and tries to fill the builder with data from those sources,
+    it goes from the highest priority to the lowest priority and checks whether data is present or not 
+    also it checks whether I run app in Development mode which can be configured inside "launchSettings.json" located in Properties directory.
+    *It's how I imagine it working, it's mainly about a result and which data builder chooses to load.
+     
+    Example order:
+        if {data} in command line arguments:
+            use it
+        else if {data} in environment variables:
+            use it:
+        else if {data} in secret AND Development mode: 
+            use it:
+        else if {data} in appsettings.{Environment}.json AND {Environment} mode:
+            use it:
+        else if {data} in appsettings.json:
+            use it:
+    
+    everything happens after "var builder = WebApplication.CreateBuilder(args);" 
+    and finishes during "var app = builder.Build();"
+
+* secret.json is being used to store sensitive data such as password to database. This file is not located withing this project so it's impossible to commit it by mistake
+
+! Keep in mind:
+    launchSettings.json is being used only for local debugging and SHOULDN'T BE included in production
